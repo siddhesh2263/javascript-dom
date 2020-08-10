@@ -1,18 +1,8 @@
-var btns = document.querySelectorAll('#book-list .delete');
+const list = document.querySelector('#book-list ul');
 
-btns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
+list.addEventListener('click', (e) => {
+    if(e.target.className == 'delete') {
         const li_target = e.target.parentElement;
-        li_target.parentNode.removeChild(li_target);
-        // Capture the parent element of the button
-        // then get the parent node and delete the child li tag
-    });
-});
-
-
-const link = document.querySelector('#book-list a');
-
-link.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('navigation to ', e.target.textContent, ' was prevented');
+        list.removeChild(li_target);
+    }
 });

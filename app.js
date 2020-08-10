@@ -1,20 +1,11 @@
-books = document.querySelectorAll('#book-list li .name');
+const banner = document.querySelector('#page-banner');
 
-// The above line will return a NodeList, and forEach loop can be applied on it
-// without converting it to Array. However a HTMLCollection needs to be converted
-// into an Array.
+console.log('#page-banner node type is: ', banner.nodeType);
+console.log('#page-banner node name is: ', banner.nodeName);
+console.log('#page-banner has child nodes: ', banner.hasChildNodes());
 
-books.forEach((book) => {
-    console.log(book.textContent);
-});
+const clonedBanner = banner.cloneNode(true);
+// By passing true, the nested elements are also cloned.
+// Otherwise, only the div tag is cloned
+console.log(clonedBanner);
 
-books.forEach((book) => {
-    book.textContent += ' (book title)';
-});
-
-const bookList = document.querySelector('#book-list');
-// Grabs all the HTML code inside the <div id=book-list> section
-console.log(bookList.innerHTML);
-
-bookList.innerHTML = '<h2>Books and more books...</h2>';
-bookList.innerHTML += '<p>This is how we add HTML</p>';

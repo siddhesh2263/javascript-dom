@@ -23,7 +23,13 @@ addForm.addEventListener('submit', (e) => {
 
     // Add context
     bookName.textContent = value;
-    deleteBtn.textContent = 'Delete';
+    deleteBtn.textContent = 'delete';
+
+    // Add classes
+    bookName.classList.add('name');
+    deleteBtn.classList.add('delete');
+    // You can also use deleteBtn.className = 'delete', but the above implementaion will
+    // allow us to add multiple classes in a correct manner.
 
     // Append to document
     li_new.appendChild(bookName);

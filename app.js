@@ -1,11 +1,15 @@
 const bookList = document.querySelector('#book-list');
-// console.log('The parent node of bookList is: ', bookList.parentNode);
 
-// console.log('Parent element is: ', bookList.parentElement.parentElement);
+console.log('book-list has next sibling: ', bookList.nextSibling);
+// Returns the line-break text node.
 
-// Getting children
-console.log(bookList.childNodes);
-// In the output, the text child node indicates the line-break.
+console.log('book-list next element sibling: ', bookList.nextElementSibling);
+// Gets the next element at the same level
 
-console.log(bookList.children);
-// This wil get the child elements, and not the line-break text nodes.
+
+console.log('book-list has previous sibling: ', bookList.previousSibling);
+console.log('book-list previous element sibling: ', bookList.previousElementSibling);
+
+
+bookList.previousElementSibling.querySelector('p').innerHTML += '<br />Too cool for anyone else';
+// We accessed the previous sibling using bookList and changes its content

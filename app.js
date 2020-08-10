@@ -1,15 +1,18 @@
-const bookList = document.querySelector('#book-list');
+var btns = document.querySelectorAll('#book-list .delete');
 
-console.log('book-list has next sibling: ', bookList.nextSibling);
-// Returns the line-break text node.
+btns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        const li_target = e.target.parentElement;
+        li_target.parentNode.removeChild(li_target);
+        // Capture the parent element of the button
+        // then get the parent node and delete the child li tag
+    });
+});
 
-console.log('book-list next element sibling: ', bookList.nextElementSibling);
-// Gets the next element at the same level
 
+const link = document.querySelector('#book-list a');
 
-console.log('book-list has previous sibling: ', bookList.previousSibling);
-console.log('book-list previous element sibling: ', bookList.previousElementSibling);
-
-
-bookList.previousElementSibling.querySelector('p').innerHTML += '<br />Too cool for anyone else';
-// We accessed the previous sibling using bookList and changes its content
+link.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('navigation to ', e.target.textContent, ' was prevented');
+});

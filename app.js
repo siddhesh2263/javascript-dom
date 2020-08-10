@@ -1,11 +1,11 @@
-const banner = document.querySelector('#page-banner');
+const bookList = document.querySelector('#book-list');
+// console.log('The parent node of bookList is: ', bookList.parentNode);
 
-console.log('#page-banner node type is: ', banner.nodeType);
-console.log('#page-banner node name is: ', banner.nodeName);
-console.log('#page-banner has child nodes: ', banner.hasChildNodes());
+// console.log('Parent element is: ', bookList.parentElement.parentElement);
 
-const clonedBanner = banner.cloneNode(true);
-// By passing true, the nested elements are also cloned.
-// Otherwise, only the div tag is cloned
-console.log(clonedBanner);
+// Getting children
+console.log(bookList.childNodes);
+// In the output, the text child node indicates the line-break.
 
+console.log(bookList.children);
+// This wil get the child elements, and not the line-break text nodes.

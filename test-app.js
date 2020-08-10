@@ -60,3 +60,18 @@ console.log(bookList.innerHTML);
 
 bookList.innerHTML = '<h2>Books and more books...</h2>';
 bookList.innerHTML += '<p>This is how we add HTML</p>';
+
+
+// ==================================================================
+
+
+const banner = document.querySelector('#page-banner');
+
+console.log('#page-banner node type is: ', banner.nodeType);
+console.log('#page-banner node name is: ', banner.nodeName);
+console.log('#page-banner has child nodes: ', banner.hasChildNodes());
+
+const clonedBanner = banner.cloneNode(true);
+// By passing true, the nested elements are also cloned.
+// Otherwise, only the div tag is cloned
+console.log(clonedBanner);
